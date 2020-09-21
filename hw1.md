@@ -3,15 +3,21 @@
 For this assignment, we'll be setting up and running [Cloud Model 1 (CM1)](https://www2.mmm.ucar.edu/people/bryan/cm1/) to conduct some numerical model simulations, and then analyzing the model output.  
 
 ## Installing the CM1 model
-George Bryan’s cloud model is a very powerful, yet compact and relatively simple, numerical model for idealized studies of clouds, convection, and so forth.  It has been used in many peer-reviewed publications in recent years. The experience of running it should give you a feel for some of the possibilities (as well as challenges) associated with using numerical models as a research tool.
-
-Because each research group has their own computing arrangements, you will need to download and compile the model yourself.  Fortunately, I have found that the model compiles easily on most computer platforms.  (Though if you can use something other than Windows, that would be best.  We have compiled it on Windows before, but it’s much more work than Mac or Linux.)  Instructions for compiling are given on the CM1 webpage, but really all you should need to do is uncomment a few lines out of the Makefile that correspond to the type of computer and Fortran compiler you have and type “make”.  For example, if you have the gfortran compiler, uncomment the couple of lines under “single processor, gnu compiler”. This compilation should be straightforward and easy.  
-
-The one additional feature that can complicated things a bit is writing the output in netCDF format (rather than the default binary format).  You will need to know where the netcdf libraries have been compiled on your machine - for most Mac or Linux machines that you would use for research, these libraries are likely already installed. If you haven't done this before, you might need to ask your group’s IT person for the details of your system, or I can try to help.
-
-Once you have the model compiled and have made any necessary changes to the namelist, cd into the “run” directory, and you just type “./cm1.exe” (without the quotes) to run the model!  Unless you changed the output format, the output will be binary files, which, along with the created .ctl files, can be directly read into GrADS. 
+The first step is to download and install CM1. Some instructions for doing that are [here](cm1_instructions.md).
 
 ## Assignment
+
+### Model configuration
+1. George Bryan has kindly provided some example namelists for running CM1 on the website [here](http://www2.mmm.ucar.edu/people/bryan/cm1/namelists/). Get the namelist for the squall line case. Write a paragraph summarizing the model configuration that is described in this namelist (write this as if you were writing a journal article about these simulations: enough information that the reader could set up an identical (or very similar) simulation, but not simply listing off every selected option.) You can use a table if you wish.
+
+2. Before running any simulations, we’re going to make a couple small changes to the namelist: turn on the output of pressure and potential temperature perturbations (prspert and thpert.) Also, increase the output frequency so that output files are written every 3 minutes (instead of the default 15 minutes).
+
+### 2D vs. 3D simulations
+
+First,we’re going to examine some of the differences that arise when running a 2-D squall-line simulation, compared with simulating it in 3 dimensions. Running a 2-D simulation is remarkably simple: just set ny = 1. It'll also run really fast. Run both a 2-D and 3-D simulation with the other model configuration settings kept at the default values. Generate any relevant figures, and summarize the similarities and differences between these two runs. Note that you will need to make some decisions about how to directly compare them (e.g., take a single slice of the 3-D simulation and compare it to 2-D? Average along the line? If so, what averaging length?) One thing to focus on in this comparison is the updraft velocities. 
+
+### Your own experiments
+Now, you can start running your own experiments. How to configure them is completely up to you, but first come up with a hypothesis that you want to test---it’s ok if this isn’t particularly original and has already been shown in the literature---and set up and run the model to test that hypothesis. (As an example, here’s a very trivial hypothesis: convection in an environment with vertical wind shear will be more organized than that in an unsheared environment. To test this, I’d set up some a run similar to my “control” run above but with zero wind shear, and investigate the differences. I trust that you will come up with slightly more interesting hypotheses than this, but it can also be instructive to test something that seems like “conventional wisdom” and confirm that it is—or isn’t—correct!) Anyway, design, run, and analyze at least two experiments, and (if applicable) compare and contrast your results to what is shown in the literature. Write up your results as if they were a short conference paper or journal article. (Emphasis on short—be concise in your writing and presentation of figures!)
 
 
 ## Installing python via miniconda
