@@ -1,4 +1,5 @@
 # Homework assignment 1 (and only)
+## Due Friday, 30 October 2020
 
 For this assignment, we'll be setting up and running [Cloud Model 1 (CM1)](https://www2.mmm.ucar.edu/people/bryan/cm1/) to conduct some numerical model simulations, and then analyzing the model output.  
 
