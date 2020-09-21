@@ -23,7 +23,7 @@ First, let's install the miniconda version of python.  (If you already have mini
 
 ## Setting up your environment
 
-Now we will set up an environment with the packages we need to have installed. This should be a fairly short list for what's really needed, but you may also want to add more.  A simple environment, named ats735, that should work is something like:
+Now we will set up an environment with the packages we need to have installed. This should be a fairly short list for what's really needed, but you may also want to add more.  If you already have a working environment that has all of these packages, then you can just use that. A simple environment, named ats735, that should work is something like:
 
 `conda create -n ats735 -c conda-forge xarray netcdf4 numpy scipy matplotlib pandas=1.0.5 jupyter`
 
