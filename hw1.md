@@ -6,7 +6,7 @@ For this assignment, we'll be setting up and running [Cloud Model 1 (CM1)](https
 The first step is to download and install CM1. Some instructions for doing that are [here](cm1_instructions.md).
 
 ## Setting up a python environment to analyze and plot CM1 output
-If you want to use python to analyze and plot the model output, I've put together some basic instructions and example code [here](python_instructions.md). You can wait to do these steps until after you've set up and run the model if you want. Likewise, if you're more comfortable with using a different programming language, you're more than welcome to do so! The 'original' language used by CM1 is [GrADS](http://cola.gmu.edu/grads/), and this is another good choice.
+If you want to use python to analyze and plot the model output, I've put together some basic instructions and example code [here](cm1_python_instructions.md). You can wait to do these steps until after you've set up and run the model if you want. Likewise, if you're more comfortable with using a different programming language, you're more than welcome to do so! The 'original' language used by CM1 is [GrADS](http://cola.gmu.edu/grads/), and this is another good choice.
 
 ## Assignment
 
