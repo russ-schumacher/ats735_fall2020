@@ -11,7 +11,7 @@ The one additional feature that can complicated things a bit is writing the outp
 
 Once you have the model compiled and have made any necessary changes to the namelist, cd into the “run” directory, and you just type “./cm1.exe” (without the quotes) to run the model!  Unless you changed the output format, the output will be binary files, which, along with the created .ctl files, can be directly read into GrADS. 
 
-
+## Assignment
 
 
 ## Installing python via miniconda
