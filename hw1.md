@@ -1,6 +1,18 @@
-# Lab assignment 2
+# Homework assignment 1 (and only)
 
-For lab assignment 2, we'll be using [MetPy](https://unidata.github.io/MetPy/latest/index.html), developed by Unidata, to produce maps and other graphics. The first step, if you haven't done this before, will be to install python, and then ultimately install MetPy.
+For this assignment, we'll be setting up and running [Cloud Model 1 (CM1)](https://www2.mmm.ucar.edu/people/bryan/cm1/) to conduct some numerical model simulations, and then analyzing the model output.  
+
+## Installing the CM1 model
+George Bryan’s cloud model is a very powerful, yet compact and relatively simple, numerical model for idealized studies of clouds, convection, and so forth.  It has been used in many peer-reviewed publications in recent years. The experience of running it should give you a feel for some of the possibilities (as well as challenges) associated with using numerical models as a research tool.
+
+Because each research group has their own computing arrangements, you will need to download and compile the model yourself.  Fortunately, I have found that the model compiles easily on most computer platforms.  (Though if you can use something other than Windows, that would be best.  We have compiled it on Windows before, but it’s much more work than Mac or Linux.)  Instructions for compiling are given on the CM1 webpage, but really all you should need to do is uncomment a few lines out of the Makefile that correspond to the type of computer and Fortran compiler you have and type “make”.  For example, if you have the gfortran compiler, uncomment the couple of lines under “single processor, gnu compiler”. This compilation should be straightforward and easy.  
+
+The one additional feature that can complicated things a bit is writing the output in netCDF format (rather than the default binary format).  You will need to know where the netcdf libraries have been compiled on your machine - for most Mac or Linux machines that you would use for research, these libraries are likely already installed. If you haven't done this before, you might need to ask your group’s IT person for the details of your system, or I can try to help.
+
+Once you have the model compiled and have made any necessary changes to the namelist, cd into the “run” directory, and you just type “./cm1.exe” (without the quotes) to run the model!  Unless you changed the output format, the output will be binary files, which, along with the created .ctl files, can be directly read into GrADS. 
+
+
+
 
 ## Installing python via miniconda
 First, let's install the miniconda version of python.  (If you already have miniconda or anaconda installed on the computer you want to use, you can skip this step.)  Following the instructions used in the [Unidata python workshop](https://unidata.github.io/python-training/):
