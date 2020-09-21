@@ -25,7 +25,7 @@ First, let's install the miniconda version of python.  (If you already have mini
 
 Now we will set up an environment with the packages we need to have installed. This should be a fairly short list for what's really needed, but you may also want to add more.  A simple environment, named ats735, that should work is something like:
 
-`conda create -n ats735 -c conda-forge xarray netcdf4 numpy scipy matplotlib pandas=1.0.5`
+`conda create -n ats735 -c conda-forge xarray netcdf4 numpy scipy matplotlib pandas=1.0.5 jupyter`
 
 (xarray doesn't play nice with the latest versions of pandas, so we'll install a slightly older one just to be safe.)  You can name your environment something other than "ats735" if you want.
 
@@ -40,7 +40,7 @@ Now we will set up an environment with the packages we need to have installed. T
 
 There are different ways you can run and interact with python, but a great way to get started is with Jupyter notebooks.  They allow for you to write and test your code in a really user-friendly way. (People tried to sell them on me and I resisted for a long time, but once I started using them, now it's my favorite way to test out new code.)
 
-- At the terminal, `cd` into whatever directory you want to work out of (this might be a directory you've set up just for the class, or you can make a new one, etc.)
+- At the terminal, `cd` into whatever directory you want to work out of (this might be the directory where your model output is located, or one directory up from there)
 
 - if you haven't, run `conda activate ats735` to activate the environment.
 
